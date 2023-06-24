@@ -1,0 +1,20 @@
+.image_div {
+	display: inline-block;
+	border-width: 1px;
+	border-radius: 10px;
+	background-color: #2c2f36;
+	height: 46px;
+	width: 46px;
+	text-align: center;
+	vertical-align: bottom;
+	position: relative;
+}
+
+.image_div img {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
