@@ -1,11 +1,10 @@
 import './App.css';
-import Count from './components/Count';
+import NavBar from './components/NavBar';
 
 const App = () => {
 	return (
 		<div className="App">
-			<h1>React Hooks</h1>
-			<Count />
+			<NavBar />
 		</div>
 	);
 };
