@@ -3,10 +3,17 @@ import Dropdown from './UI/Dropdown';
 import SearchBar from './UI/SearchBar';
 import ThemeToggle from './UI/ThemeToggle';
 import useWindowSize from '../hooks/useWindowSize';
-import HamburgerDarkTheme from '../images/hamburger_dark.svg';
+import Hamburger from './UI/Hamburger';
+import { useState } from 'react';
+import HamburgerIcon from './UI/HamburgerIcon';
 
 const NavBar = () => {
 	const windowSize = useWindowSize();
+	const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
+
+	const hamBurgerToggleHandler = () => {
+		setShowHamburgerMenu((prev) => !prev);
+	};
 
 	const constructMobileView = () => {
 		return (
@@ -15,9 +22,7 @@ const NavBar = () => {
 					<SearchBar />
 					<Dropdown />
 				</div>
-				<div className={classes.right}>
-					<img src={HamburgerDarkTheme} alt="Hamburger Menu Icon" />
-				</div>
+				<HamburgerIcon hamBurgerToggleHandler={hamBurgerToggleHandler} />
 			</>
 		);
 	};
@@ -46,12 +51,15 @@ const NavBar = () => {
 	};
 
 	return (
-		<nav className={classes.navbar}>
-			<div className={classes.nav_wrapper}>
-				{windowSize.width > 768 && constructDesktopView()}
-				{windowSize.width <= 768 && constructMobileView()}
-			</div>
-		</nav>
+		<>
+			<nav className={classes.navbar}>
+				<div className={classes.nav_wrapper}>
+					{windowSize.width > 768 && constructDesktopView()}
+					{windowSize.width <= 768 && constructMobileView()}
+				</div>
+			</nav>
+			{showHamburgerMenu && <Hamburger />}
+		</>
 	);
 };
 
