@@ -1,11 +1,11 @@
 import classes from './NavBar.module.css';
-import Dropdown from './UI/Dropdown';
-import SearchBar from './UI/SearchBar';
-import ThemeToggle from './UI/ThemeToggle';
-import useWindowSize from '../hooks/useWindowSize';
-import Hamburger from './UI/Hamburger';
+import Dropdown from './Dropdown';
+import SearchBar from './SearchBar';
+import ThemeToggle from './ThemeToggle';
+import useWindowSize from '../../hooks/useWindowSize';
+import Hamburger from './Hamburger';
 import { useState } from 'react';
-import HamburgerIcon from './UI/HamburgerIcon';
+import HamburgerIcon from './HamburgerIcon';
 
 const NavBar = () => {
 	const windowSize = useWindowSize();

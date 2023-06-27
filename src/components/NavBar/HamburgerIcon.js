@@ -1,6 +1,6 @@
 import React from 'react';
 import HamburgerDarkTheme from '../../images/hamburger_dark.svg';
-import classes from '../NavBar.module.css';
+import classes from './NavBar.module.css';
 
 const HamburgerIcon = ({ hamBurgerToggleHandler }) => {
 	return (
