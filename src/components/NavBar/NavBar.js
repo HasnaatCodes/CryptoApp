@@ -6,6 +6,7 @@ import useWindowSize from '../../hooks/useWindowSize';
 import Hamburger from './Hamburger';
 import { useState } from 'react';
 import HamburgerIcon from './HamburgerIcon';
+import NavBarLinks from './NavBarLinks';
 
 const NavBar = () => {
 	const windowSize = useWindowSize();
@@ -31,14 +32,7 @@ const NavBar = () => {
 		return (
 			<>
 				<div className={classes.left}>
-					<ul>
-						<li>
-							<a href="#">Coins</a>
-						</li>
-						<li>
-							<a href="#">Portfolio</a>
-						</li>
-					</ul>
+					<NavBarLinks />
 				</div>
 
 				<div className={classes.right}>

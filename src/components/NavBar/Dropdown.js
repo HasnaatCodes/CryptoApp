@@ -1,40 +1,57 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classes from './Dropdown.module.css';
 
 const Dropdown = () => {
-	const [selectedCurrency, setSelectedCurrency] = useState('$');
+	const [selectedCurrencyIcon, setSelectedCurrencyIcon] = useState('$');
+	const [selectedCurrency, setSelectedCurrency] = useState('usd');
 
-	const currencyChangeHandler = (event) => {
-		let selectedValue = event.target.value;
-		switch (selectedValue) {
+	const currencyChangeHandler = ({ target: { value } }) => {
+		getCurrencyIcon(value);
+		setSelectedCurrency(value);
+	};
+
+	useEffect(() => {
+		const lastSelected = localStorage.getItem('currency') ?? 'usd';
+		setSelectedCurrency(lastSelected);
+		getCurrencyIcon(lastSelected);
+	}, []);
+
+	const getCurrencyIcon = (value) => {
+		switch (value) {
 			case 'usd':
-				setSelectedCurrency('$');
+				setSelectedCurrencyIcon('$');
 				break;
 			case 'eur':
-				setSelectedCurrency('€');
+				setSelectedCurrencyIcon('€');
 				break;
 			case 'gbp':
-				setSelectedCurrency('£');
+				setSelectedCurrencyIcon('£');
 				break;
 			case 'btc':
-				setSelectedCurrency('₿');
+				setSelectedCurrencyIcon('₿');
 				break;
 			case 'eth':
-				setSelectedCurrency('Ξ');
+				setSelectedCurrencyIcon('Ξ');
 				break;
 			default:
-				setSelectedCurrency('$');
+				setSelectedCurrencyIcon('$');
 		}
+
+		localStorage.setItem('currency', value);
 	};
 
 	return (
 		<div className={classes.dropdown_container}>
 			<div className={classes.symbol}>
-				<span className={classes.child}>{selectedCurrency}</span>
+				<span className={classes.child}>{selectedCurrencyIcon}</span>
 			</div>
 
 			<div className={classes.dropdown}>
-				<select className={classes.currency} onChange={currencyChangeHandler}>
+				<select
+					className={classes.currency}
+					onChange={currencyChangeHandler}
+					value={selectedCurrency}
+				>
 					<option value="usd">USD</option>
 					<option value="eur">EUR</option>
 					<option value="gbp">GBP</option>
