@@ -1,56 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import classes from './Dropdown.module.css';
+import getCurrencyIcon from '../../utils/getCurrencyIcon';
+import CurrencyContext from '../../context/currency-context';
 
 const Dropdown = () => {
-	const [selectedCurrencyIcon, setSelectedCurrencyIcon] = useState('$');
-	const [selectedCurrency, setSelectedCurrency] = useState('usd');
+	const { selectedCurrency, setSelectedCurrency } = useContext(CurrencyContext);
 
 	const currencyChangeHandler = ({ target: { value } }) => {
-		getCurrencyIcon(value);
-		setSelectedCurrency(value);
+		const newCurrencyIcon = getCurrencyIcon(value);
+		setSelectedCurrency({
+			currency: value,
+			currencyIcon: newCurrencyIcon,
+		});
 	};
 
 	useEffect(() => {
 		const lastSelected = localStorage.getItem('currency') ?? 'usd';
-		setSelectedCurrency(lastSelected);
-		getCurrencyIcon(lastSelected);
-	}, []);
-
-	const getCurrencyIcon = (value) => {
-		switch (value) {
-			case 'usd':
-				setSelectedCurrencyIcon('$');
-				break;
-			case 'eur':
-				setSelectedCurrencyIcon('€');
-				break;
-			case 'gbp':
-				setSelectedCurrencyIcon('£');
-				break;
-			case 'btc':
-				setSelectedCurrencyIcon('₿');
-				break;
-			case 'eth':
-				setSelectedCurrencyIcon('Ξ');
-				break;
-			default:
-				setSelectedCurrencyIcon('$');
-		}
-
-		localStorage.setItem('currency', value);
-	};
+		setSelectedCurrency({
+			currency: lastSelected,
+			currencyIcon: getCurrencyIcon(lastSelected),
+		});
+	}, [setSelectedCurrency]);
 
 	return (
 		<div className={classes.dropdown_container}>
 			<div className={classes.symbol}>
-				<span className={classes.child}>{selectedCurrencyIcon}</span>
+				<span className={classes.child}>{selectedCurrency.currencyIcon}</span>
 			</div>
 
 			<div className={classes.dropdown}>
 				<select
 					className={classes.currency}
 					onChange={currencyChangeHandler}
-					value={selectedCurrency}
+					value={selectedCurrency.currency}
 				>
 					<option value="usd">USD</option>
 					<option value="eur">EUR</option>
