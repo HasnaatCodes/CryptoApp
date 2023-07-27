@@ -15,18 +15,13 @@
 
 .market_data {
 	height: 50px;
-	width: 55%;
+	width: auto;
 	border-radius: 0 0 25px 25px;
 	background-color: #191b1f;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 12px;
-}
-
-.market_data_holder {
-	height: 90%;
-	width: 90%;
 }
 
 .market_data_list {
@@ -40,6 +35,7 @@
 .market_data_list li {
 	display: flex;
 	align-items: center;
+	padding: 10px;
 }
 
 .dot {
@@ -69,6 +65,29 @@
 	border-radius: 7px;
 }
 
-.lis {
-	font-size: 12px;
+.progress_bar {
+	width: 50px;
+	height: 12px;
+	border-radius: 10px;
+	margin: auto 0 auto 5px;
+	background: #2172e5;
+}
+
+.inner_bar {
+	height: 12px;
+	border-radius: 10px;
+	background: white;
+}
+
+.image {
+	margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
+	.market_data {
+		height: 30px;
+	}
 }

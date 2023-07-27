@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import classes from './App.module.css';
 import NavBar from './components/NavBar/NavBar';
-import Coins from './components/Pages/Coins';
+import GlobalDataBar from './components/Pages/GlobalDataBar';
 import CurrencyContext from './context/currency-context';
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
 		currency: 'usd',
 		currencyIcon: '$',
 	});
+
 	return (
 		<CurrencyContext.Provider
 			value={{
@@ -20,7 +21,7 @@ const App = () => {
 			<div className={classes.App}>
 				<Router>
 					<NavBar />
-					<Coins />
+					<GlobalDataBar />
 					<Routes>
 						<Route path="/" element={<h1>Coins</h1>} />
 						<Route path="/portfolio" element={<h1>Portfolio</h1>} />

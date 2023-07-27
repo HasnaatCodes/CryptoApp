@@ -7,6 +7,7 @@ const NavBarLinks = (props) => {
 		ul: `${classes.unordered_list}`,
 		li: `${classes.unordered_list_li_element}`,
 		link: `${classes.link_element}`,
+		active: `${classes.link_active}`,
 	};
 
 	if (props.isHamburger) {
@@ -20,7 +21,10 @@ const NavBarLinks = (props) => {
 	return (
 		<ul className={navClasses.ul}>
 			<li className={navClasses.li}>
-				<NavLink className={navClasses.link} to="coins">
+				<NavLink
+					className={`${navClasses.link} ${navClasses.active}`}
+					to="coins"
+				>
 					Coins
 				</NavLink>
 			</li>
