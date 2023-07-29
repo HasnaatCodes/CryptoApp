@@ -1,0 +1,25 @@
+.graph_holder {
+	background-color: #191b1f;
+	height: 100%;
+	width: 100%;
+	border-radius: 20px;
+	padding-bottom: 15px;
+
+	max-height: 500px;
+}
+
+.info {
+	padding: 15px;
+	min-height: 100px;
+}
+
+.info p {
+	padding: 0;
+	margin: 0;
+}
+
+.bar_holder {
+	border: 1px solid red;
+	height: 500px;
+	margin-top: 20px;
+}

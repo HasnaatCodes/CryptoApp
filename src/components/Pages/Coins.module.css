@@ -1,0 +1,37 @@
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.content {
+	width: 90%;
+	margin: 0 25px;
+	height: 100%;
+	padding-bottom: 20px;
+}
+
+.graphs {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 20px;
+}
+
+.left_graph {
+	height: 100%;
+	width: 48.5%;
+	padding-bottom: 20px;
+}
+
+.right_graph {
+	height: 100%;
+	width: 48.5%;
+	padding-bottom: 20px;
+}
+
+.writing_holder {
+	position: absolute;
+	margin-top: 17px;
+	width: 95%;
+}

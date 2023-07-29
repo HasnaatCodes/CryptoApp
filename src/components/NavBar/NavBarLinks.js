@@ -21,10 +21,7 @@ const NavBarLinks = (props) => {
 	return (
 		<ul className={navClasses.ul}>
 			<li className={navClasses.li}>
-				<NavLink
-					className={`${navClasses.link} ${navClasses.active}`}
-					to="coins"
-				>
+				<NavLink className={`${navClasses.link} ${navClasses.active}`} to="/">
 					Coins
 				</NavLink>
 			</li>

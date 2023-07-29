@@ -1,0 +1,13 @@
+.writing_holder {
+	position: absolute;
+}
+
+.medium_writing {
+	font-size: 1rem;
+}
+
+.large_writing {
+	font-size: 1.7rem;
+	line-height: 2.2rem;
+	font-weight: 500;
+}

@@ -16,8 +16,8 @@ const Coins = () => {
 	const { selectedCurrency } = useContext(CurrencyContext);
 	const { currency, currencyIcon } = selectedCurrency;
 
-	const [firstPercent, setFirstPercent] = useState('');
-	const [secondPercent, setSecondPercent] = useState('');
+	const [bitcoinPercent, setBitcoinPercent] = useState('');
+	const [ethereumPercent, setEthereumPercent] = useState('');
 	const windowSize = useWindowSize();
 
 	useEffect(() => {
@@ -52,14 +52,8 @@ const Coins = () => {
 	};
 
 	const setPercentBars = (marketCap) => {
-		let arr = Object.values(marketCap)
-			.sort(function (a, b) {
-				return b - a;
-			})
-			.slice(0, 2);
-
-		setFirstPercent(Math.round(arr[0]));
-		setSecondPercent(Math.round(arr[1]));
+		setBitcoinPercent(Math.round(marketCap.btc));
+		setEthereumPercent(Math.round(marketCap.eth));
 	};
 
 	const ProgressBar = ({ percent }) => {
@@ -74,7 +68,7 @@ const Coins = () => {
 	};
 
 	return (
-		<div className={classes.coins_overview_container}>
+		<div className={classes.container}>
 			<div className={classes.market_data}>
 				<ul className={classes.market_data_list}>
 					{windowSize.width >= 1200 && (
@@ -106,14 +100,14 @@ const Coins = () => {
 					</li>
 					<li>
 						<img className={classes.image} src={Bitcoin} alt="Bitcoin" />
-						<span>{firstPercent}%</span>
-						<ProgressBar percent={firstPercent} />
+						<span>{bitcoinPercent}%</span>
+						<ProgressBar percent={bitcoinPercent} />
 					</li>
 					{windowSize.width >= 480 && (
 						<li>
 							<img className={classes.image} src={Ethereum} alt="Ethereum" />
-							<span>{secondPercent}%</span>
-							<ProgressBar percent={secondPercent} />
+							<span>{ethereumPercent}%</span>
+							<ProgressBar percent={ethereumPercent} />
 						</li>
 					)}
 				</ul>
