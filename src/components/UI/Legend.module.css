@@ -11,3 +11,19 @@
 	line-height: 2.2rem;
 	font-weight: 500;
 }
+
+@media screen and (max-width: 768px) {
+	p {
+		margin: 0;
+	}
+
+	.medium_writing {
+		font-size: 0.9rem;
+	}
+
+	.large_writing {
+		font-size: 1.4rem;
+		line-height: 2rem;
+		font-weight: 500;
+	}
+}

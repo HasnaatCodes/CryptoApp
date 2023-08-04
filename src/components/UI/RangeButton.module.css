@@ -1,0 +1,14 @@
+.button_div {
+	background-color: #1f2128;
+	padding: 10px 15px;
+	font-size: 0.9rem;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.selected {
+	background-color: #2172e5;
+}

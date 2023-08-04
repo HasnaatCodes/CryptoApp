@@ -7,6 +7,8 @@ import CurrencyContext from '../../context/currency-context';
 import useWindowSize from '../../hooks/useWindowSize';
 import Bitcoin from '../../images/bitcoin.svg';
 import Ethereum from '../../images/ethereum.svg';
+import ProgressBar from './ProgressBar';
+import ListElement from './ListElement';
 
 const Coins = () => {
 	const [activeCurrencies, setActiveCurrencies] = useState();
@@ -56,59 +58,48 @@ const Coins = () => {
 		setEthereumPercent(Math.round(marketCap.eth));
 	};
 
-	const ProgressBar = ({ percent }) => {
-		return (
-			<div className={classes.progress_bar}>
-				<div
-					className={classes.inner_bar}
-					style={{ width: `${percent}%` }}
-				></div>
-			</div>
-		);
-	};
-
 	return (
 		<div className={classes.container}>
 			<div className={classes.market_data}>
 				<ul className={classes.market_data_list}>
 					{windowSize.width >= 1200 && (
-						<li>
+						<ListElement>
 							<span>Coins {activeCurrencies}</span>
-						</li>
+						</ListElement>
 					)}
 					{windowSize.width >= 1500 && (
-						<li>
+						<ListElement>
 							<span>Exchange {markets}</span>
-						</li>
+						</ListElement>
 					)}
 					{windowSize.width >= 1000 && (
-						<li>
+						<ListElement>
 							<div className={classes.dot}></div>
 							<span>
 								{currencyIcon}
 								{marketCap}
 							</span>
-						</li>
+						</ListElement>
 					)}
-					<li>
+					<ListElement>
 						<div className={classes.dot}></div>
 						<span>
 							{currencyIcon}
 							{totalVolume}
 						</span>
 						<ProgressBar percent={totalVolume?.toString().slice(0, 2)} />
-					</li>
-					<li>
+					</ListElement>
+					<ListElement>
 						<img className={classes.image} src={Bitcoin} alt="Bitcoin" />
 						<span>{bitcoinPercent}%</span>
 						<ProgressBar percent={bitcoinPercent} />
-					</li>
+					</ListElement>
 					{windowSize.width >= 480 && (
-						<li>
+						<ListElement>
 							<img className={classes.image} src={Ethereum} alt="Ethereum" />
 							<span>{ethereumPercent}%</span>
 							<ProgressBar percent={ethereumPercent} />
-						</li>
+						</ListElement>
 					)}
 				</ul>
 			</div>

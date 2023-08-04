@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './NavBarLinks.module.css';
 
@@ -18,15 +18,39 @@ const NavBarLinks = (props) => {
 		};
 	}
 
+	const [activeLink, setActiveLink] = useState('Coins');
+
+	const coinClasses =
+		activeLink === 'Coins'
+			? `${navClasses.link} ${navClasses.active}`
+			: `${navClasses.link}`;
+
+	const portfolioClasses =
+		activeLink === 'Portfolio'
+			? `${navClasses.link} ${navClasses.active}`
+			: `${navClasses.link}`;
+
 	return (
 		<ul className={navClasses.ul}>
 			<li className={navClasses.li}>
-				<NavLink className={`${navClasses.link} ${navClasses.active}`} to="/">
+				<NavLink
+					className={coinClasses}
+					to="/"
+					onClick={() => {
+						setActiveLink('Coins');
+					}}
+				>
 					Coins
 				</NavLink>
 			</li>
 			<li className={navClasses.li}>
-				<NavLink className={navClasses.link} to="portfolio">
+				<NavLink
+					className={portfolioClasses}
+					to="portfolio"
+					onClick={() => {
+						setActiveLink('Portfolio');
+					}}
+				>
 					Portfolio
 				</NavLink>
 			</li>

@@ -1,0 +1,17 @@
+.range_selector {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.range {
+	width: 500px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+
+	background-color: #191b1f;
+	border-radius: 20px;
+}

@@ -1,0 +1,31 @@
+/* MOBILE SLIDER */
+
+.mobile_wrapper {
+	margin-top: 14px;
+	position: relative;
+
+	background-color: #191b1f;
+	border-radius: 20px;
+	padding: 10px 20px;
+}
+
+.slider_button_next,
+.slider_button_prev {
+	position: absolute;
+	top: 50%;
+	background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	z-index: 1;
+}
+
+.slider_button_next {
+	right: 10px;
+}
+
+.slider_button_prev {
+	left: 10px;
+}
