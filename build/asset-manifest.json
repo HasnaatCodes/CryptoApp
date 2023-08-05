@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CryptoApp/static/css/main.e69d41fa.css",
-    "main.js": "/CryptoApp/static/js/main.43a9c2ed.js",
+    "main.css": "/CryptoApp/static/css/main.b8b5c67e.css",
+    "main.js": "/CryptoApp/static/js/main.6a29e28f.js",
     "static/media/ThemeToggle.svg": "/CryptoApp/static/media/ThemeToggle.8be804575ee7c2c99739d417d6f2dd13.svg",
     "static/media/bitcoin.svg": "/CryptoApp/static/media/bitcoin.3420afa466fce0f5fc55465b161dc914.svg",
     "static/media/slick.svg": "/CryptoApp/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -12,11 +12,11 @@
     "static/media/hamburger_dark.svg": "/CryptoApp/static/media/hamburger_dark.8028dab97a269e838994ea7f1050680a.svg",
     "index.html": "/CryptoApp/index.html",
     "static/media/ethereum.svg": "/CryptoApp/static/media/ethereum.02d48f991e9c59d115be699b99fd896c.svg",
-    "main.e69d41fa.css.map": "/CryptoApp/static/css/main.e69d41fa.css.map",
-    "main.43a9c2ed.js.map": "/CryptoApp/static/js/main.43a9c2ed.js.map"
+    "main.b8b5c67e.css.map": "/CryptoApp/static/css/main.b8b5c67e.css.map",
+    "main.6a29e28f.js.map": "/CryptoApp/static/js/main.6a29e28f.js.map"
   },
   "entrypoints": [
-    "static/css/main.e69d41fa.css",
-    "static/js/main.43a9c2ed.js"
+    "static/css/main.b8b5c67e.css",
+    "static/js/main.6a29e28f.js"
   ]
 }

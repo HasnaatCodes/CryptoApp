@@ -52,3 +52,16 @@
 		left: 15px;
 	}
 }
+
+@media screen and (max-width: 400px) {
+	.search input {
+		width: 80px;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.search input {
+		width: 45px;
+		font-size: 13px;
+	}
+}
