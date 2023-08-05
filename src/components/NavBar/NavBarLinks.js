@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import classes from './NavBarLinks.module.css';
 
 const NavBarLinks = (props) => {
@@ -18,7 +18,12 @@ const NavBarLinks = (props) => {
 		};
 	}
 
-	const [activeLink, setActiveLink] = useState('Coins');
+	const { pathname } = useLocation();
+	console.log(pathname);
+
+	const [activeLink, setActiveLink] = useState(
+		pathname === '/' ? 'Coins' : 'Portfolio'
+	);
 
 	const coinClasses =
 		activeLink === 'Coins'
